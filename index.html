@@ -253,13 +253,27 @@
 
     /* ─── HERO ───────────────────────────────────────────────── */
     .hero {
+      position: relative;
       padding-block: clamp(4rem, 10vw, 7rem);
       overflow: hidden;
       background:
         linear-gradient(90deg, rgba(230,247,247,.35) 0%, rgba(255,255,255,0) 42%),
         var(--white);
     }
+    .hero::before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      inset: clamp(2rem, 5vw, 4rem) max(-10rem, -8vw) 0 46%;
+      border-radius: 260px 0 0 260px;
+      background:
+        radial-gradient(circle at 65% 18%, rgba(255,255,255,.95) 0 14%, rgba(255,255,255,0) 34%),
+        linear-gradient(135deg, rgba(43,188,187,.22), rgba(230,247,247,.8) 52%, rgba(255,255,255,.6));
+      pointer-events: none;
+    }
     .hero__inner {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: minmax(540px, .95fr) minmax(0, 1.05fr);
       gap: clamp(2.5rem, 5vw, 4.5rem);
@@ -379,15 +393,13 @@
       content: '';
       position: absolute;
       z-index: -1;
-      width: 128%;
-      height: 118%;
-      top: -11%;
-      right: -18%;
-      border-radius: 48% 0 0 48%;
+      width: 110%;
+      height: 104%;
+      top: -2%;
+      right: -5%;
+      border-radius: var(--radius-xl);
       background:
-        radial-gradient(circle at 76% 20%, rgba(255,255,255,.92) 0 16%, rgba(255,255,255,0) 32%),
-        linear-gradient(135deg, rgba(43,188,187,.22), rgba(230,247,247,.72) 58%, rgba(255,255,255,0));
-      filter: saturate(1.04);
+        linear-gradient(135deg, rgba(255,255,255,.58), rgba(255,255,255,0));
       pointer-events: none;
     }
     .hero__img-wrap {
@@ -1170,10 +1182,10 @@
         width: 100%;
       }
       .hero__visual::before {
-        width: 112%;
-        height: 106%;
+        width: 108%;
+        height: 104%;
         top: -4%;
-        right: -6%;
+        right: -4%;
         border-radius: var(--radius-xl);
       }
       .tab-layout { grid-template-columns: 280px 1fr; }
@@ -1183,6 +1195,10 @@
       .nav__links { display: none; }
       .nav__burger { display: flex; }
 
+      .hero::before {
+        inset: 18rem -35% 12% 12%;
+        border-radius: var(--radius-xl);
+      }
       .hero__img-wrap { max-width: 100%; aspect-ratio: 1 / 1; }
       .hero__title { font-size: clamp(3rem, 14vw, 4.45rem); }
       .hero__desc { font-size: 1.02rem; }
