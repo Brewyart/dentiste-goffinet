@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions légales — Clinique dentaire du Douaire · Ottignies</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent:       #2BBCBB;
+      --accent-light: #E6F7F7;
+      --dark-bg:      #0D1E1E;
+      --white:        #FFFFFF;
+      --grey-50:      #F2F4F4;
+      --grey-200:     #D5DADA;
+      --grey-400:     #9EABAB;
+      --grey-800:     #2E3838;
+      --text:         #1E2A2A;
+      --text-muted:   #5A6B6B;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --radius-md:  12px;
+      --radius-lg:  20px;
+      --radius-full: 9999px;
+      --shadow-acc: 0 4px 20px rgba(43,188,187,.28);
+      --container: 860px;
+      --pad: clamp(1.25rem, 5vw, 3rem);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    svg { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+
+    .container { max-width: var(--container); margin-inline: auto; padding-inline: var(--pad); }
+
+    /* NAV */
+    header { position: sticky; top: 0; z-index: 100; }
+    .nav { background: rgba(255,255,255,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--grey-200); padding-block: 1rem; }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; max-width: var(--container); margin-inline: auto; padding-inline: var(--pad); }
+    .nav__logo { display: flex; flex-direction: column; line-height: 1.2; }
+    .nav__logo-name { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: .03em; color: var(--text); }
+    .nav__logo-sub { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+    .nav__back { display: flex; align-items: center; gap: .5rem; font-size: .875rem; font-weight: 500; color: var(--text-muted); transition: color .2s; }
+    .nav__back:hover { color: var(--accent); }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--dark-bg);
+      padding-block: clamp(3rem, 7vw, 5rem);
+    }
+    .page-header__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .85rem;
+    }
+    .page-header__tag::before { content: ''; display: block; width: 20px; height: 2px; background: var(--accent); border-radius: 2px; }
+    .page-header__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: .75rem;
+    }
+    .page-header__sub {
+      font-size: .9rem;
+      color: rgba(255,255,255,.5);
+    }
+
+    /* CONTENT */
+    .content {
+      padding-block: clamp(3rem, 7vw, 5rem);
+    }
+
+    .legal-intro {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 3rem;
+      font-size: .9375rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .legal-section {
+      margin-bottom: 3rem;
+    }
+    .legal-section + .legal-section {
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--grey-200);
+    }
+    .legal-section__title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: .02em;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+    .legal-section p {
+      font-size: .9375rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: .85rem;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section strong { color: var(--text); font-weight: 600; }
+
+    /* PRACTITIONER CARDS */
+    .practitioners {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .practitioner-card {
+      background: var(--grey-50);
+      border: 1px solid var(--grey-200);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+    }
+    .practitioner-card__name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      letter-spacing: .02em;
+      margin-bottom: .25rem;
+    }
+    .practitioner-card__role {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .practitioner-card__rows {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .practitioner-card__row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: .5rem;
+      font-size: .825rem;
+      line-height: 1.5;
+    }
+    .practitioner-card__row dt {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .practitioner-card__row dd {
+      color: var(--text);
+    }
+    .practitioner-card__row dd a {
+      color: var(--accent);
+    }
+    .practitioner-card__row dd a:hover {
+      text-decoration: underline;
+    }
+    .practitioner-card__divider {
+      height: 1px;
+      background: var(--grey-200);
+      margin-block: .85rem;
+    }
+    .practitioner-card__authorities {
+      margin-top: .75rem;
+    }
+    .practitioner-card__authorities-title {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: .5rem;
+    }
+    .practitioner-card__authority {
+      font-size: .8rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      padding-left: .85rem;
+      position: relative;
+      margin-bottom: .25rem;
+    }
+    .practitioner-card__authority::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* FOOTER */
+    .footer { background: var(--grey-800); padding-block: 2.5rem; }
+    .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; max-width: var(--container); margin-inline: auto; padding-inline: var(--pad); }
+    .footer__logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: .03em; color: var(--white); }
+    .footer__logo span { display: block; font-family: var(--font-body); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-top: .1rem; }
+    .footer__links { display: flex; gap: 1.75rem; }
+    .footer__links a { font-size: .8rem; color: var(--grey-400); transition: color .2s; }
+    .footer__links a:hover { color: var(--white); }
+    .footer__copy { font-size: .8rem; color: var(--grey-400); }
+
+    @media (max-width: 640px) {
+      .practitioners { grid-template-columns: 1fr; }
+      .practitioner-card__row { grid-template-columns: 1fr; gap: .15rem; }
+      .footer__inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-name">Clinique du Douaire</span>
+      <span class="nav__logo-sub">Cabinet dentaire · Ottignies</span>
+    </a>
+    <a href="index.html" class="nav__back">
+      <svg width="16" height="16" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Retour au site
+    </a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="container">
+    <p class="page-header__tag">Informations légales</p>
+    <h1 class="page-header__title">Mentions légales.</h1>
+    <p class="page-header__sub">Clinique dentaire du Douaire — Avenue du Douaire 64, 1340 Ottignies</p>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<main class="content">
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="legal-intro">
+      Ce site web a pour objectif d'informer sur le cabinet, ses praticiens, la philosophie, les traitements proposés, sa localisation et les moyens de contacter le cabinet. Les informations publiées ne peuvent en aucun cas remplacer une consultation, le diagnostic d'un professionnel ou un traitement médical prescrit.
+    </div>
+
+    <!-- Finalité du site -->
+    <div class="legal-section">
+      <h2 class="legal-section__title">Finalité du site</h2>
+      <p>Le contenu disponible sur ce site vise à améliorer l'information générale entre les praticiens et les patients ou visiteurs. Ce site web est uniquement financé par les chirurgiens-dentistes du cabinet. Il n'y a pas d'autres sources de financement et il n'existe aucune publicité sur ce site.</p>
+    </div>
+
+    <!-- Données personnelles -->
+    <div class="legal-section" id="données">
+      <h2 class="legal-section__title">Protection des données personnelles</h2>
+      <p>Les visiteurs du site ne sont pas obligés de fournir des informations personnelles pour naviguer. Cependant, l'envoi d'une demande de contact suppose la collecte de certaines données personnelles.</p>
+      <p><strong>Aucune donnée personnelle n'est collectée à votre insu, cédée à des tiers ou utilisée à des fins non prévues.</strong> Sur ce site, nous ne collectons de données personnelles que lorsque vous utilisez le formulaire de prise de contact. Ces données ne seront pas traitées pour une autre finalité et ne seront pas transmises à des tiers.</p>
+      <p>Toutes les données échangées avec votre dentiste sont soumises à un droit de protection de la vie privée conformément à la <strong>loi du 30 juillet 2018</strong> relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel.</p>
+    </div>
+
+    <!-- Praticiens -->
+    <div class="legal-section">
+      <h2 class="legal-section__title">Informations sur les praticiens</h2>
+      <div class="practitioners">
+
+        <!-- Bérengère Goffinet -->
+        <div class="practitioner-card">
+          <p class="practitioner-card__name">Bérengère Goffinet</p>
+          <p class="practitioner-card__role">Dentiste généraliste</p>
+          <dl class="practitioner-card__rows">
+            <div class="practitioner-card__row">
+              <dt>Statut</dt>
+              <dd>Non conventionnée</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>N° INAMI</dt>
+              <dd>30200256001</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Contact</dt>
+              <dd><a href="mailto:dentistegoffinet@gmail.com">dentistegoffinet@gmail.com</a></dd>
+            </div>
+          </dl>
+          <div class="practitioner-card__divider"></div>
+          <dl class="practitioner-card__rows">
+            <div class="practitioner-card__row">
+              <dt>Société</dt>
+              <dd>Cabinet dentaire Bérengère Goffinet</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Forme juridique</dt>
+              <dd>SRL</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>N° entreprise</dt>
+              <dd>BE 0887 370 846</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Siège social</dt>
+              <dd>Avenue des Cerisiers 28, 1470 Bousval</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Assurance RC</dt>
+              <dd>MS Amlin Insurance — contrat LXX090841068<br>Bd du Roi Albert II 37, 1030 Bruxelles</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Couverture</dt>
+              <dd>Belgique &amp; Espace Économique Européen</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Code agréé</dt>
+              <dd>3092</dd>
+            </div>
+          </dl>
+          <div class="practitioner-card__authorities">
+            <p class="practitioner-card__authorities-title">Autorités de surveillance</p>
+            <p class="practitioner-card__authority">SPF Santé Publique — Avenue Galilée 5/2, 1210 Bruxelles</p>
+            <p class="practitioner-card__authority">FWB — Direction agrément prestataires soins de santé, Rue Adolphe Lavallée 1, 1080 Bruxelles</p>
+            <p class="practitioner-card__authority">INAMI — Avenue de Tervueren 211, 1150 Bruxelles</p>
+            <p class="practitioner-card__authority">AFCN Radioprotection — Rue du Marquis 1 bte 6A, 1000 Bruxelles</p>
+          </div>
+        </div>
+
+        <!-- Victoria Lombard -->
+        <div class="practitioner-card">
+          <p class="practitioner-card__name">Victoria Lombard</p>
+          <p class="practitioner-card__role">Dentiste généraliste</p>
+          <dl class="practitioner-card__rows">
+            <div class="practitioner-card__row">
+              <dt>Statut</dt>
+              <dd>Non conventionnée</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>N° INAMI</dt>
+              <dd>31714644001</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Contact</dt>
+              <dd><a href="mailto:viklombard@gmail.com">viklombard@gmail.com</a></dd>
+            </div>
+          </dl>
+          <div class="practitioner-card__divider"></div>
+          <dl class="practitioner-card__rows">
+            <div class="practitioner-card__row">
+              <dt>Société</dt>
+              <dd>VL</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Forme juridique</dt>
+              <dd>SRL</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>N° entreprise</dt>
+              <dd>BE 0763 559 155</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Siège social</dt>
+              <dd>Clos des Arbalétriers 5, 1390 Grez-Doiceau</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Assurance RC</dt>
+              <dd>AMMA — contrat 2041217<br>Avenue des Arts 39/1, 1040 Bruxelles<br>02/209.02.00</dd>
+            </div>
+            <div class="practitioner-card__row">
+              <dt>Couverture</dt>
+              <dd>Belgique &amp; Espace Économique Européen</dd>
+            </div>
+          </dl>
+          <div class="practitioner-card__authorities">
+            <p class="practitioner-card__authorities-title">Autorités de surveillance</p>
+            <p class="practitioner-card__authority">SPF Santé Publique — Avenue Galilée 5/2, 1210 Bruxelles</p>
+            <p class="practitioner-card__authority">FWB — Direction agrément prestataires soins de santé, Rue Adolphe Lavallée 1, 1080 Bruxelles</p>
+            <p class="practitioner-card__authority">INAMI — Avenue de Tervueren 211, 1150 Bruxelles</p>
+            <p class="practitioner-card__authority">AFCN Radioprotection — Rue du Marquis 1 bte 6A, 1000 Bruxelles</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Responsabilité -->
+    <div class="legal-section">
+      <h2 class="legal-section__title">Limitation de responsabilité</h2>
+      <p>Les informations publiées sur ce site sont fournies à titre indicatif uniquement. Elles ne peuvent remplacer une consultation médicale, un diagnostic professionnel ou un traitement prescrit par un praticien de santé qualifié. La Clinique dentaire du Douaire décline toute responsabilité pour tout dommage résultant de l'utilisation des informations contenues sur ce site.</p>
+    </div>
+
+    <!-- Propriété intellectuelle -->
+    <div class="legal-section">
+      <h2 class="legal-section__title">Propriété intellectuelle</h2>
+      <p>L'ensemble des contenus présents sur ce site (textes, images, structure) est la propriété exclusive de la Clinique dentaire du Douaire ou de ses praticiens. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__logo">
+      Clinique du Douaire
+      <span>Cabinet dentaire · Ottignies</span>
+    </div>
+    <nav class="footer__links">
+      <a href="mentions-legales.html">Mentions légales</a>
+    </nav>
+    <p class="footer__copy">© 2025 Clinique dentaire du Douaire</p>
+  </div>
+</footer>
+
+</body>
+</html>
