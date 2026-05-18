@@ -264,8 +264,8 @@
       content: '';
       position: absolute;
       z-index: 0;
-      inset: clamp(2rem, 5vw, 4rem) max(-10rem, -8vw) 0 46%;
-      border-radius: 260px 0 0 260px;
+      inset: clamp(1.5rem, 4vw, 3rem) max(-18rem, -14vw) -4rem 40%;
+      border-radius: 999px 0 0 999px;
       background:
         radial-gradient(circle at 65% 18%, rgba(255,255,255,.95) 0 14%, rgba(255,255,255,0) 34%),
         linear-gradient(135deg, rgba(43,188,187,.22), rgba(230,247,247,.8) 52%, rgba(255,255,255,.6));
@@ -371,11 +371,12 @@
       align-items: center;
       gap: .4rem;
       padding: .35rem .9rem;
-      background: var(--grey-50);
+      background: var(--dark-bg);
       border-radius: var(--radius-full);
       font-size: .8rem;
       font-weight: 500;
-      color: var(--text-muted);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
     }
     .badge svg { flex-shrink: 0; }
 
@@ -1172,8 +1173,8 @@
       .nav__burger { display: flex; }
 
       .hero::before {
-        inset: 18rem -35% 12% 12%;
-        border-radius: var(--radius-xl);
+        inset: 18rem -70% 8% 4%;
+        border-radius: 999px 0 0 999px;
       }
       .hero__img-wrap { max-width: 100%; aspect-ratio: 1 / 1; }
       .hero__title { font-size: clamp(3rem, 14vw, 4.45rem); }
@@ -1301,10 +1302,6 @@
           <span class="badge">
             <svg width="13" height="13" viewBox="0 0 24 24" color="var(--accent)" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             Lun–Jeu 9h–17h
-          </span>
-          <span class="badge">
-            <svg width="13" height="13" viewBox="0 0 24 24" color="var(--accent)" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Avenue du Douaire 64
           </span>
           <span class="badge">
             <svg width="13" height="13" viewBox="0 0 24 24" color="var(--accent)" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
