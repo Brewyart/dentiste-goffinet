@@ -13,6 +13,12 @@
       --accent:       #2BBCBB;
       --accent-light: #E6F7F7;
       --dark-bg:      #0D1E1E;
+      --page-bg:      #FBFEFD;
+      --page-texture:
+        linear-gradient(90deg, rgba(230,247,247,.34) 0%, rgba(255,255,255,0) 42%),
+        repeating-linear-gradient(0deg, rgba(13,30,30,.018) 0 1px, transparent 1px 18px),
+        repeating-linear-gradient(90deg, rgba(13,30,30,.014) 0 1px, transparent 1px 22px),
+        var(--page-bg);
       --white:        #FFFFFF;
       --grey-50:      #F2F4F4;
       --grey-200:     #D5DADA;
@@ -31,7 +37,7 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--page-texture); background-attachment: fixed; -webkit-font-smoothing: antialiased; }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
@@ -42,7 +48,7 @@
 
     /* NAV */
     header { position: sticky; top: 0; z-index: 100; }
-    .nav { background: rgba(255,255,255,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--grey-200); padding-block: 1rem; }
+    .nav { background: rgba(255,255,255,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(43,188,187,.16); padding-block: 1rem; }
     .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; max-width: var(--container); margin-inline: auto; padding-inline: var(--pad); }
     .nav__logo { display: flex; flex-direction: column; line-height: 1.2; }
     .nav__logo-name { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: .03em; color: var(--text); }
@@ -100,7 +106,7 @@
     }
     .legal-section + .legal-section {
       padding-top: 2.5rem;
-      border-top: 1px solid var(--grey-200);
+      border-top: 1px solid rgba(43,188,187,.16);
     }
     .legal-section__title {
       font-family: var(--font-display);
@@ -126,8 +132,8 @@
       margin-top: 1.5rem;
     }
     .practitioner-card {
-      background: var(--grey-50);
-      border: 1px solid var(--grey-200);
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(43,188,187,.16);
       border-radius: var(--radius-lg);
       padding: 1.75rem;
     }
@@ -172,7 +178,7 @@
     }
     .practitioner-card__divider {
       height: 1px;
-      background: var(--grey-200);
+      background: rgba(43,188,187,.16);
       margin-block: .85rem;
     }
     .practitioner-card__authorities {
@@ -202,14 +208,14 @@
     }
 
     /* FOOTER */
-    .footer { background: var(--grey-800); padding-block: 2.5rem; }
+    .footer { background: var(--dark-bg); padding-block: 2.5rem; }
     .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; max-width: var(--container); margin-inline: auto; padding-inline: var(--pad); }
     .footer__logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: .03em; color: var(--white); }
     .footer__logo span { display: block; font-family: var(--font-body); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-top: .1rem; }
     .footer__links { display: flex; gap: 1.75rem; }
-    .footer__links a { font-size: .8rem; color: var(--grey-400); transition: color .2s; }
+    .footer__links a { font-size: .8rem; color: rgba(255,255,255,.55); transition: color .2s; }
     .footer__links a:hover { color: var(--white); }
-    .footer__copy { font-size: .8rem; color: var(--grey-400); }
+    .footer__copy { font-size: .8rem; color: rgba(255,255,255,.55); }
 
     @media (max-width: 640px) {
       .practitioners { grid-template-columns: 1fr; }

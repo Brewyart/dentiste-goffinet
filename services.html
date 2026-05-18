@@ -65,6 +65,12 @@
       --accent-hover:  #229B9A;
       --accent-dark:   #155F5F;
       --dark-bg:       #0D1E1E;
+      --page-bg:       #FBFEFD;
+      --page-texture:
+        linear-gradient(90deg, rgba(230,247,247,.34) 0%, rgba(255,255,255,0) 42%),
+        repeating-linear-gradient(0deg, rgba(13,30,30,.018) 0 1px, transparent 1px 18px),
+        repeating-linear-gradient(90deg, rgba(13,30,30,.014) 0 1px, transparent 1px 22px),
+        var(--page-bg);
       --white:         #FFFFFF;
       --off-white:     #F8F9F9;
       --grey-50:       #F2F4F4;
@@ -94,7 +100,7 @@
     /* ─── RESET ──────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--page-texture); background-attachment: fixed; -webkit-font-smoothing: antialiased; }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
@@ -113,7 +119,7 @@
 
     /* ─── NAV ────────────────────────────────────────────────── */
     header { position: sticky; top: 0; z-index: 100; }
-    .nav { background: rgba(255,255,255,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--grey-200); padding-block: 1rem; }
+    .nav { background: rgba(255,255,255,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(43,188,187,.16); padding-block: 1rem; }
     .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
     .nav__logo { display: flex; flex-direction: column; line-height: 1.2; }
     .nav__logo-name { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: .03em; color: var(--text); }
@@ -125,9 +131,9 @@
     .nav__cta:hover { background: var(--accent-hover) !important; box-shadow: var(--shadow-acc); }
     .nav__burger { display: none; flex-direction: column; gap: 5px; padding: .4rem; }
     .nav__burger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
-    .nav__mobile { display: none; flex-direction: column; padding-block: 1rem; border-top: 1px solid var(--grey-200); margin-top: .5rem; }
+    .nav__mobile { display: none; flex-direction: column; padding-block: 1rem; border-top: 1px solid rgba(43,188,187,.16); margin-top: .5rem; }
     .nav__mobile.open { display: flex; }
-    .nav__mobile a { padding: .75rem 0; font-size: .95rem; font-weight: 500; color: var(--text-muted); border-bottom: 1px solid var(--grey-50); }
+    .nav__mobile a { padding: .75rem 0; font-size: .95rem; font-weight: 500; color: var(--text-muted); border-bottom: 1px solid rgba(43,188,187,.12); }
     .nav__mobile .btn--primary { margin-top: .75rem; text-align: center; justify-content: center; }
 
     /* ─── PAGE HERO ──────────────────────────────────────────── */
@@ -235,7 +241,7 @@
       padding-block: clamp(2rem, 3.5vw, 2.5rem);
       scroll-margin-top: 120px;
     }
-    .service-section:nth-child(even) { background: var(--grey-50); }
+    .service-section:nth-child(even) { background: transparent; }
 
     .service-layout {
       display: grid;
@@ -295,7 +301,8 @@
       position: absolute;
       bottom: -1rem;
       right: -1rem;
-      background: var(--white);
+      background: var(--dark-bg);
+      color: var(--white);
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-md);
       padding: .85rem 1.1rem;
@@ -314,8 +321,8 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    .service-badge-float__text strong { display: block; font-size: .85rem; font-weight: 600; color: var(--text); }
-    .service-badge-float__text span { font-size: .75rem; color: var(--text-muted); }
+    .service-badge-float__text strong { display: block; font-size: .85rem; font-weight: 600; color: var(--white); }
+    .service-badge-float__text span { font-size: .75rem; color: rgba(255,255,255,.68); }
 
     /* ─── SERVICE CONTENT ────────────────────────────────────── */
     .service-content {}
@@ -399,7 +406,7 @@
     }
     .btn--primary { background: var(--accent); color: var(--white); }
     .btn--primary:hover { background: var(--accent-hover); box-shadow: var(--shadow-acc); }
-    .btn--ghost { background: transparent; color: var(--text); border: 1.5px solid var(--grey-200); }
+    .btn--ghost { background: transparent; color: var(--text); border: 1.5px solid rgba(13,30,30,.16); }
     .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ─── MINI CTA STRIP ─────────────────────────────────────── */
@@ -420,7 +427,7 @@
       margin-bottom: 1.75rem;
     }
     .btn--white { background: var(--white); color: var(--dark-bg); }
-    .btn--white:hover { background: var(--grey-50); }
+    .btn--white:hover { background: var(--accent-light); }
 
     /* ─── BIG CTA ─────────────────────────────────────────────── */
     .cta-section {
@@ -437,14 +444,14 @@
     .cta-section__note { margin-top: 1.5rem; font-size: .8rem; color: rgba(255,255,255,.45); }
 
     /* ─── FOOTER ─────────────────────────────────────────────── */
-    .footer { background: var(--grey-800); padding-block: 2.5rem; }
+    .footer { background: var(--dark-bg); padding-block: 2.5rem; }
     .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
     .footer__logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: .03em; color: var(--white); }
     .footer__logo span { display: block; font-family: var(--font-body); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-top: .1rem; }
     .footer__links { display: flex; gap: 1.75rem; align-items: center; }
-    .footer__links a { font-size: .8rem; color: var(--grey-400); transition: color .2s; }
+    .footer__links a { font-size: .8rem; color: rgba(255,255,255,.55); transition: color .2s; }
     .footer__links a:hover { color: var(--white); }
-    .footer__copy { font-size: .8rem; color: var(--grey-400); }
+    .footer__copy { font-size: .8rem; color: rgba(255,255,255,.55); }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
     @media (max-width: 768px) {

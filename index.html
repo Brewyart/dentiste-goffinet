@@ -88,6 +88,12 @@
       --accent-hover:  #229B9A;
       --accent-dark:   #155F5F;
       --dark-bg:       #0D1E1E;
+      --page-bg:       #FBFEFD;
+      --page-texture:
+        linear-gradient(90deg, rgba(230,247,247,.34) 0%, rgba(255,255,255,0) 42%),
+        repeating-linear-gradient(0deg, rgba(13,30,30,.018) 0 1px, transparent 1px 18px),
+        repeating-linear-gradient(90deg, rgba(13,30,30,.014) 0 1px, transparent 1px 22px),
+        var(--page-bg);
 
       --white:         #FFFFFF;
       --off-white:     #F8F9F9;
@@ -127,7 +133,8 @@
     body {
       font-family: var(--font-body);
       color: var(--text);
-      background: var(--white);
+      background: var(--page-texture);
+      background-attachment: fixed;
       -webkit-font-smoothing: antialiased;
     }
     img { display: block; max-width: 100%; }
@@ -142,7 +149,7 @@
       padding-inline: var(--pad);
     }
     .section { padding-block: var(--section-y); }
-    .section--alt { background: var(--grey-50); }
+    .section--alt { background: transparent; }
     .section--dark { background: var(--dark-bg); color: var(--white); }
 
     /* ─── REVEAL ANIMATIONS ──────────────────────────────────── */
@@ -166,7 +173,7 @@
       background: rgba(255,255,255,.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--grey-200);
+      border-bottom: 1px solid rgba(43,188,187,.16);
       padding-block: 1rem;
     }
     .nav__inner {
@@ -256,9 +263,7 @@
       position: relative;
       padding-block: clamp(4rem, 10vw, 7rem);
       overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(230,247,247,.35) 0%, rgba(255,255,255,0) 42%),
-        var(--white);
+      background: transparent;
     }
     .hero::before {
       content: '';
@@ -353,7 +358,7 @@
     .btn--ghost {
       background: transparent;
       color: var(--text);
-      border: 1.5px solid var(--grey-200);
+      border: 1.5px solid rgba(13,30,30,.16);
     }
     .btn--ghost:hover {
       border-color: var(--accent);
@@ -539,8 +544,8 @@
       margin-top: 2rem;
     }
     .feature-card {
-      background: var(--white);
-      border: 1px solid var(--grey-200);
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(43,188,187,.16);
       border-radius: var(--radius-md);
       padding: 1.1rem 1.25rem;
       display: flex;
@@ -588,7 +593,7 @@
       flex-wrap: nowrap;
       gap: 0;
       margin-bottom: 2.5rem;
-      border-bottom: 2px solid var(--grey-200);
+      border-bottom: 2px solid rgba(43,188,187,.16);
       padding-bottom: 0;
     }
     .tab-btn {
@@ -622,7 +627,7 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--grey-200);
+      background: rgba(43,188,187,.2);
       flex-shrink: 0;
       transition: background .2s;
     }
@@ -666,8 +671,8 @@
       align-items: center;
       justify-content: center;
       border-radius: var(--radius-full);
-      background: var(--white);
-      border: 1px solid var(--grey-200);
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(43,188,187,.18);
       color: var(--text);
       box-shadow: var(--shadow-sm);
       transition: color .2s, border-color .2s, box-shadow .2s;
@@ -764,7 +769,7 @@
       text-align: center;
       margin-top: 3rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--grey-200);
+      border-top: 1px solid rgba(43,188,187,.16);
     }
     .tabs-footer p {
       font-size: .875rem;
@@ -784,13 +789,13 @@
       display: flex;
       gap: 1.25rem;
       padding-block: 1.5rem;
-      border-bottom: 1px solid var(--grey-200);
+      border-bottom: 1px solid rgba(43,188,187,.16);
     }
-    .philosophy__step:first-child { border-top: 1px solid var(--grey-200); }
+    .philosophy__step:first-child { border-top: 1px solid rgba(43,188,187,.16); }
     .philosophy__step-num {
       font-family: var(--font-display);
       font-size: 2rem;
-      color: var(--grey-200);
+      color: rgba(43,188,187,.3);
       line-height: 1;
       min-width: 2.5rem;
     }
@@ -842,8 +847,8 @@
     .team-card {
       display: flex;
       flex-direction: row;
-      background: var(--white);
-      border: 1px solid var(--grey-200);
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(43,188,187,.16);
       border-radius: var(--radius-lg);
       overflow: hidden;
       transition: box-shadow .25s, border-color .25s;
@@ -855,7 +860,7 @@
     .team-card__avatar {
       width: 150px;
       flex-shrink: 0;
-      background: var(--grey-50);
+      background: rgba(43,188,187,.1);
       overflow: hidden;
     }
     .team-card__avatar img {
@@ -950,7 +955,7 @@
       color: var(--dark-bg);
     }
     .btn--white:hover {
-      background: var(--grey-50);
+      background: var(--accent-light);
     }
     .btn--outline-white {
       background: transparent;
@@ -1025,7 +1030,7 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
       box-shadow: var(--shadow-md);
-      background: var(--grey-50);
+      background: rgba(43,188,187,.1);
       min-height: 280px;
     }
     .contact__map iframe {
@@ -1072,7 +1077,7 @@
 
     /* ─── FOOTER ─────────────────────────────────────────────── */
     .footer {
-      background: var(--grey-800);
+      background: var(--dark-bg);
       padding-block: 2.5rem;
     }
     .footer__inner {
@@ -1105,13 +1110,13 @@
     }
     .footer__links a {
       font-size: .8rem;
-      color: var(--grey-400);
+      color: rgba(255,255,255,.55);
       transition: color .2s;
     }
     .footer__links a:hover { color: var(--white); }
     .footer__copy {
       font-size: .8rem;
-      color: var(--grey-400);
+      color: rgba(255,255,255,.55);
     }
 
     /* ─── MOBILE NAV ─────────────────────────────────────────── */
@@ -1120,7 +1125,7 @@
       flex-direction: column;
       gap: 0;
       padding-block: 1rem;
-      border-top: 1px solid var(--grey-200);
+      border-top: 1px solid rgba(43,188,187,.16);
       margin-top: .5rem;
     }
     .nav__mobile.open { display: flex; }
@@ -1129,7 +1134,7 @@
       font-size: .95rem;
       font-weight: 500;
       color: var(--text-muted);
-      border-bottom: 1px solid var(--grey-50);
+      border-bottom: 1px solid rgba(43,188,187,.12);
       transition: color .2s;
     }
     .nav__mobile a:hover { color: var(--accent); }
