@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable | Clinique dentaire du Douaire</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #2BBCBB;
+      --accent-light: #E6F7F7;
+      --accent-hover: #229B9A;
+      --dark-bg: #0D1E1E;
+      --page-bg: #FBFEFD;
+      --white: #FFFFFF;
+      --text: #1E2A2A;
+      --text-muted: #5A6B6B;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-full: 9999px;
+      --shadow-acc: 0 4px 20px rgba(43,188,187,.28);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(ellipse 90% 55% at 78% 8%, rgba(43,188,187,.13), transparent 62%),
+        radial-gradient(ellipse 70% 48% at 6% 34%, rgba(43,188,187,.07), transparent 62%),
+        var(--page-bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container {
+      width: min(100% - 2.5rem, 1120px);
+      margin-inline: auto;
+    }
+    .nav {
+      padding-block: 1rem;
+      border-bottom: 1px solid rgba(43,188,187,.16);
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .nav__logo {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .nav__logo-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      letter-spacing: .03em;
+    }
+    .nav__logo-sub {
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    main {
+      min-height: calc(100vh - 74px);
+      display: grid;
+      align-items: center;
+      padding-block: clamp(4rem, 10vw, 7rem);
+    }
+    .eyebrow {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    h1 {
+      max-width: 820px;
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 12vw, 8rem);
+      line-height: .95;
+      letter-spacing: .01em;
+      color: var(--dark-bg);
+      margin-bottom: 1.5rem;
+    }
+    p {
+      max-width: 54ch;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: .8rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+    }
+    .btn--primary {
+      color: var(--white);
+      background: var(--accent);
+      box-shadow: var(--shadow-acc);
+    }
+    .btn--primary:hover { background: var(--accent-hover); }
+    .btn--ghost {
+      color: var(--text);
+      border: 1.5px solid rgba(13,30,30,.16);
+      background: transparent;
+    }
+    .btn--ghost:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    @media (max-width: 560px) {
+      .actions { display: grid; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-name">Clinique du Douaire</span>
+        <span class="nav__logo-sub">Cabinet dentaire · Ottignies</span>
+      </a>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <p class="eyebrow">Erreur 404</p>
+      <h1>Page introuvable.</h1>
+      <p>La page demandée n'existe pas ou a été déplacée. Vous pouvez revenir à l'accueil ou nous appeler directement pour prendre rendez-vous.</p>
+      <div class="actions">
+        <a href="index.html" class="btn btn--primary">Retour à l'accueil</a>
+        <a href="tel:+3210400232" class="btn btn--ghost">010 / 40.02.32</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
