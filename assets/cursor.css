@@ -1,0 +1,67 @@
+@media (pointer: fine) and (hover: hover) {
+  html.cursor-ready,
+  html.cursor-ready body,
+  html.cursor-ready a,
+  html.cursor-ready button,
+  html.cursor-ready input,
+  html.cursor-ready textarea,
+  html.cursor-ready select,
+  html.cursor-ready [role="button"] {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(43, 188, 187, .9);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    transition: opacity .18s ease, width .18s ease, height .18s ease, border-color .18s ease, background-color .18s ease;
+    will-change: transform, width, height;
+  }
+
+  .custom-cursor__dot {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #0D1E1E;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    transition: opacity .18s ease, transform .18s ease, background-color .18s ease;
+    will-change: transform;
+  }
+
+  html.cursor-visible .custom-cursor,
+  html.cursor-visible .custom-cursor__dot {
+    opacity: 1;
+  }
+
+  html.cursor-hover .custom-cursor {
+    width: 24px;
+    height: 24px;
+    border-color: rgba(43, 188, 187, 1);
+    background-color: rgba(43, 188, 187, .08);
+  }
+
+  html.cursor-hover .custom-cursor__dot {
+    background: #155F5F;
+  }
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse), (hover: none) {
+  .custom-cursor,
+  .custom-cursor__dot {
+    display: none;
+  }
+}

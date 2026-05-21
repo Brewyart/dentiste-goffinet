@@ -22,6 +22,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="prefetch" href="index.html">
+  <link rel="stylesheet" href="assets/cursor.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -512,7 +514,7 @@
           <span class="nav__logo-sub">Cabinet dentaire · Ottignies</span>
         </a>
         <ul class="nav__links">
-          <li><a href="services.html" class="active">Soins</a></li>
+          <li><a href="services.html" class="active" aria-current="page">Soins</a></li>
           <li><a href="index.html#philosophie">Notre approche</a></li>
           <li><a href="index.html#equipe">L'équipe</a></li>
           <li><a href="index.html#contact">Contact</a></li>
@@ -932,12 +934,15 @@
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="mentions-legales.html#données">Politique de confidentialité</a>
       </nav>
-      <p class="footer__copy">© 2025 Clinique dentaire du Douaire</p>
+      <p class="footer__copy">© <span id="copy-year">2025</span> Clinique dentaire du Douaire</p>
     </div>
   </div>
 </footer>
 
 <script>
+  /* Copyright year */
+  document.getElementById('copy-year').textContent = new Date().getFullYear();
+
   /* Sticky services nav — recalcule dès que la nav change de taille */
   const mainNav = document.querySelector('.nav');
   function syncNavTop() {
@@ -1000,5 +1005,6 @@
     });
   }, { passive: true });
 </script>
+<script src="assets/cursor.js" defer></script>
 </body>
 </html>
